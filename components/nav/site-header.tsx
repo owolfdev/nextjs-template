@@ -71,7 +71,7 @@ function SiteHeader() {
           </a>
         </nav>
         <div className="flex items-center justify-end flex-1 space-x-4">
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-2 items-center">
             <ModeToggle />
             <AuthComponent />
           </div>
