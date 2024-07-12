@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { PersonIcon } from "@radix-ui/react-icons";
+import { Button } from "../ui/button";
 
 export default function AuthComponent() {
   const [isOpen, setIsOpen] = useState(false);
