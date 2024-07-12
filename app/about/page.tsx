@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 // Define the metadata generation function
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "About",
+    title: "Next Template | About",
   };
 }
 

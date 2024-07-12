@@ -1,5 +1,13 @@
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+// Define the metadata generation function
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Next Template",
+  };
+}
 
 export default function Home() {
   const markdown = `

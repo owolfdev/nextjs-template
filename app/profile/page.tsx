@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 // Define the metadata generation function
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Next Template | Contact",
+    title: "Next Template | Profile",
   };
 }
 
@@ -13,7 +13,7 @@ export default function Blog() {
   return (
     <div className="max-w-3xl z-10 w-full items-center justify-between">
       <div className="w-full flex justify-center items-center flex-col gap-6">
-        <h1 className="text-5xl sm:text-6xl font-bold">Contact</h1>
+        <h1 className="text-5xl sm:text-6xl font-bold">Profile</h1>
 
         <div className="w-full">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
