@@ -22,7 +22,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // <ClerkProvider>
     <html lang="en">
       <body className={`${inter.className}`}>
         <ThemeProvider
@@ -35,10 +34,9 @@ export default function RootLayout({
           <main className="flex flex-col items-center justify-between py-12 sm:py-24  px-10 sm:py-20 min-h-[calc(100vh-12rem)]">
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
-    // </ClerkProvider>
   );
 }
