@@ -1,35 +1,83 @@
-import ReactMarkdown from "react-markdown";
-import Image from "next/image";
+import fs from "node:fs";
+import path from "node:path";
+import Link from "next/link";
 import type { Metadata } from "next";
 
-// Define the metadata generation function
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Next Template | Blog",
+    title: "Next.js Template | Blog",
   };
 }
 
-export default function Blog() {
-  return (
-    <div className="max-w-3xl z-10 w-full items-center justify-between">
-      <div className="w-full flex justify-center items-center flex-col gap-6">
-        <h1 className="text-5xl sm:text-6xl font-bold">Blog</h1>
+type Post = {
+  slug: string;
+  metadata: PostMetadata;
+};
 
-        <div className="w-full">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-          qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-          dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-          quia non numquam eius modi tempora incidunt ut labore et dolore magnam
-          aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-          exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
-          ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in
-          ea voluptate velit esse quam nihil molestiae consequatur, vel illum
-          qui dolorem eum fugiat quo voluptas nulla pariatur?
-        </div>
+interface PostMetadata {
+  title: string;
+  publishDate: string;
+  [key: string]: any;
+}
+
+async function getAllPosts(): Promise<Post[]> {
+  const dir = path.join(process.cwd(), "content", "blogs");
+  const files = fs.readdirSync(dir);
+
+  const posts = files
+    .filter(
+      (filename) => filename.endsWith(".mdx") && !filename.startsWith(".")
+    )
+    .map((filename) => {
+      try {
+        const { metadata } = require(`@/content/blogs/${filename}`);
+        return {
+          slug: filename.replace(".mdx", ""),
+          metadata: metadata || { title: "Untitled", index: 0 },
+        };
+      } catch (error) {
+        console.error(`Error loading metadata for file ${filename}:`, error);
+        return {
+          slug: filename.replace(".mdx", ""),
+          metadata: { title: "Untitled", index: 0 },
+        };
+      }
+    });
+
+  // Sort posts by index in ascending order
+  posts.sort((a, b) => (a.metadata.index || 0) - (b.metadata.index || 0));
+
+  return posts;
+}
+
+export default async function Home() {
+  const posts = await getAllPosts();
+
+  return (
+    <div className="flex flex-col gap-8 max-w-3xl z-10 w-full items-center justify-between">
+      <div>
+        <h2 className="text-5xl sm:text-6xl font-bold">Blog</h2>
+      </div>
+      <div className="text-lg">
+        <p>
+          Welcome to the blog! Here you will find a collection of articles and
+          posts.
+        </p>
+      </div>
+
+      <div className="w-full">
+        <ul className="space-y-4">
+          {posts.map((post) => (
+            <li key={post.slug} className="p-4 border rounded-md shadow">
+              <Link className="flex flex-col" href={`/blog/${post.slug}`}>
+                <div className="text-2xl font-bold hover:underline">
+                  {post.metadata.title}
+                </div>
+                <div>{post.metadata.publishDate}</div>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
