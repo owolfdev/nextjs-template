@@ -23,35 +23,35 @@ function SiteHeader() {
           </SheetTrigger>
           <SheetContent side="left">
             <SheetHeader className="pt-8">
-              <SheetTitle>
+              {/* <SheetTitle>
                 <span className="text-4xl">Menu</span>
-              </SheetTitle>
+              </SheetTitle> */}
               {/* <SheetDescription>Find your way around.</SheetDescription> */}
             </SheetHeader>
 
             <div className="pt-8 pl-4 text-lg">
-              <ul className="space-y-4">
-                <li>
+              <div className="space-y-4">
+                <div>
                   <Link href="/">
                     <SheetClose>Home</SheetClose>
                   </Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   <Link href="/about">
                     <SheetClose>About</SheetClose>
                   </Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   <Link href="/blog">
                     <SheetClose>Blog</SheetClose>
                   </Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   <Link href="/contact">
                     <SheetClose>Contact</SheetClose>
                   </Link>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </SheetContent>
         </Sheet>
@@ -70,7 +70,7 @@ function SiteHeader() {
             Contact
           </a>
         </nav>
-        <div className="flex items-center justify-end flex-1 space-x-4">
+        <div className="flex items-center justify-end flex-1 space-x-4 z-20">
           <div className="flex gap-2 items-center">
             <ModeToggle />
             <AuthComponent />

@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 // Define the metadata generation function
 export async function generateMetadata(): Promise<Metadata> {
@@ -11,23 +12,39 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Home() {
   const markdown = `
-  🚀 **Next.js 14 Framework**: This is a basic template starter using Next.js 14. It offers efficient performance and fast page loading.
-
-🌟 **Shadcn UI Elements**: The interface uses Shadcn UI components. It's designed to be responsive and user-friendly.
-
-🎉 **Getting Started**: Begin your development with this Next.js 14 starter template. It's a foundation for creating modern web applications.
-
-code: [https://github.com/owolfdev/nextjs-template](https://github.com/owolfdev/nextjs-template)
+  
   `;
+
+  const MDXContent = dynamic(() => import("@/content/page-content/home.mdx"));
 
   return (
     <div className="max-w-3xl z-10 w-full items-center justify-between">
       <div className="w-full flex justify-center items-center flex-col gap-6">
-        <h1 className="text-5xl sm:text-6xl font-bold">Next.js Template</h1>
-        <div className="flex flex-col gap-4 text-[16px]">
-          <ReactMarkdown>{markdown}</ReactMarkdown>
+        <h1 className="text-5xl sm:text-6xl font-bold pb-6">
+          Next.js Template
+        </h1>
+        {/* <div className="flex flex-col gap-4 text-[16px]">{markdown}</div> */}
+        {/* <MDXContent /> */}
+        <div className="flex flex-col gap-4">
+          <p>
+            🚀 Next.js 14 Framework: This is a basic template starter using
+            Next.js 14. It offers efficient performance and fast page loading.
+          </p>
+          <p>
+            🌟 Shadcn UI Elements: The interface uses Shadcn UI components. It's
+            designed to be responsive and user-friendly.
+          </p>{" "}
+          <p>
+            📝 MDX Support**: Write content using Markdown and embed React
+            components within it.
+          </p>{" "}
+          <p>
+            🎉 **Getting Started**: Begin your development with this Next.js 14
+            starter template. It's a foundation for creating modern web
+            applications.
+          </p>
         </div>
-        <div className="w-full">
+        <div className="w-full text-lg">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inventore veritatis et quasi architecto beatae vitae dicta

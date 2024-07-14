@@ -1,25 +1,40 @@
-import React from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/prism";
+"use client";
+import React, { useRef, useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Code = (props: any) => {
-  const codeContent =
-    typeof props.children === "string"
-      ? props.children
-      : props.children.props.children;
-  const className = props.children.props?.className || "";
-  const matches = className?.match(/language-(?<lang>.*)/);
+  const [copied, setCopied] = useState(false);
+  const codeRef = useRef<HTMLElement>(null);
+
+  // Extract the language from the className
+  const className = props.className || "";
+  const matches = className.match(/language-(?<lang>.*)/);
   const language = matches?.groups?.lang || "";
 
+  // Handle copy functionality
+  const handleCopy = () => {
+    if (codeRef.current) {
+      const codeText = codeRef.current.innerText;
+      navigator.clipboard.writeText(codeText).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+      });
+    }
+  };
+
   return (
-    <div className="code-component text-sm flex flex-col gap-0 pb-2 flex-wrap max-w-full">
-      <SyntaxHighlighter
-        className="rounded-lg"
-        style={nightOwl}
-        language={language}
-      >
-        {codeContent}
-      </SyntaxHighlighter>
+    <div className="code-block text-sm gap-0 rounded-lg text-white ">
+      <div className="flex justify-between items-center bg-gray-900 py-2 px-4 rounded-t-lg">
+        <span className="text-gray-300">{language}</span>
+        <button className="text-gray-300 hover:text-white" onClick={handleCopy}>
+          {copied ? "Copied!" : "Copy"}
+        </button>
+      </div>
+      <pre className="bg-gray-800 p-4 rounded-b-lg overflow-auto">
+        <code ref={codeRef} className={className}>
+          {props.children}
+        </code>
+      </pre>
     </div>
   );
 };

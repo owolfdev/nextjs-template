@@ -66,18 +66,18 @@ export default async function Home() {
       </div>
 
       <div className="w-full">
-        <ul className="space-y-4">
+        <div className="space-y-4">
           {posts.map((post) => (
-            <li key={post.slug} className="p-4 border rounded-md shadow">
+            <div key={post.slug} className="p-4 border rounded-md shadow">
               <Link className="flex flex-col" href={`/blog/${post.slug}`}>
                 <div className="text-2xl font-bold hover:underline">
                   {post.metadata.title}
                 </div>
                 <div>{post.metadata.publishDate}</div>
               </Link>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

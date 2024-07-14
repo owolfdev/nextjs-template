@@ -34,7 +34,7 @@ export default function AuthComponent() {
             <PersonIcon className="h-5 w-5" />
           </div>
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent className="bg-background">
           <Link href="/">
             <DropdownMenuItem>Home</DropdownMenuItem>
           </Link>

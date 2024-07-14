@@ -1,0 +1,47 @@
+export const metadata = {
+  title: "Demonstrating the <Code /> and <YouTube /> Components",
+  publishDate: "2024-07-14",
+  description:
+    "Learn how to use the <Code /> and <YouTube /> components in your MDX files.",
+  category: "MDX",
+};
+
+MDX allows you to integrate various components into your content seamlessly. Here, we'll demonstrate how to use the `<Code />` and `<YouTube />` components within your MDX files.
+
+The `<Code />` component is perfect for displaying syntax-highlighted code snippets. Here's an example of how to use it:
+
+```tsx
+import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/prism";
+
+const Code = (props: any) => {
+  const codeContent =
+    typeof props.children === "string"
+      ? props.children
+      : props.children.props.children;
+  const className = props.children.props?.className || "";
+  const matches = className?.match(/language-(?<lang>.\*)/);
+  const language = matches?.groups?.lang || "";
+
+  return (
+    <div className="code-component text-sm flex flex-col gap-0 pb-2 flex-wrap max-w-full">
+      <SyntaxHighlighter
+        className="rounded-lg"
+        style={nightOwl}
+        language={language}
+      >
+        {codeContent}
+      </SyntaxHighlighter>
+    </div>
+  );
+};
+
+export default Code;
+```
+
+The `<YouTube />` component is ideal for embedding YouTube videos. Here's how to use it:
+
+<YouTube id="dQw4w9WgXcQ" />
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
