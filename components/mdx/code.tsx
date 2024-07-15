@@ -23,7 +23,7 @@ const Code = (props: any) => {
   };
 
   return (
-    <div className="code-block text-sm gap-0 rounded-lg text-white ">
+    <div className="code-block text-sm gap-0 rounded-lg text-white">
       <div className="flex justify-between items-center bg-gray-900 py-2 px-4 rounded-t-lg">
         <span className="text-gray-300">{language}</span>
         <button className="text-gray-300 hover:text-white" onClick={handleCopy}>
@@ -31,7 +31,10 @@ const Code = (props: any) => {
         </button>
       </div>
       <pre className="bg-gray-800 p-4 rounded-b-lg overflow-auto">
-        <code ref={codeRef} className={className}>
+        <code
+          ref={codeRef}
+          className={`${className} whitespace-pre-wrap break-words`}
+        >
           {props.children}
         </code>
       </pre>

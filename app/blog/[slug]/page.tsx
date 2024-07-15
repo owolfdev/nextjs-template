@@ -74,7 +74,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </p>
           </div>
           <div className="pb-10">
-            <h1 className="text-6xl font-black capitalize">
+            <h1 className="text-5xl sm:text-6xl font-black capitalize leading-12">
               {post.metadata.title}
             </h1>
           </div>
