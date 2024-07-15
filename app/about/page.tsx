@@ -13,7 +13,7 @@ export default function About() {
   return (
     <div className="max-w-3xl z-10 w-full items-center justify-between">
       <div className="w-full flex justify-center items-center flex-col gap-6">
-        <h1 className="text-5xl sm:text-6xl font-bold">About</h1>
+        <h1 className="text-5xl sm:text-6xl font-black pb-6">About</h1>
 
         <div className="w-full text-lg">
           This Next.js template includes MDX support, allowing you to write

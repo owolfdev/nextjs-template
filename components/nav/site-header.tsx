@@ -29,8 +29,8 @@ function SiteHeader() {
               {/* <SheetDescription>Find your way around.</SheetDescription> */}
             </SheetHeader>
 
-            <div className="pt-8 pl-4 text-lg">
-              <div className="space-y-4">
+            <div className="pt-8 pl-2 text-lg">
+              <div className="space-y-8 ">
                 <div>
                   <Link href="/">
                     <SheetClose>Home</SheetClose>

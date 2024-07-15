@@ -20,12 +20,12 @@ export default function Home() {
   return (
     <div className="max-w-3xl z-10 w-full items-center justify-between">
       <div className="w-full flex justify-center items-center flex-col gap-6">
-        <h1 className="text-5xl sm:text-6xl font-bold pb-6">
+        <h1 className="text-5xl sm:text-6xl font-black pb-6">
           Next.js Template
         </h1>
         {/* <div className="flex flex-col gap-4 text-[16px]">{markdown}</div> */}
         {/* <MDXContent /> */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 text-lg">
           <p>
             🚀 Next.js 14 Framework: This is a basic template starter using
             Next.js 14. It offers efficient performance and fast page loading.

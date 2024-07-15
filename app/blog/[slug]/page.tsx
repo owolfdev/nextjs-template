@@ -67,7 +67,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <article className="prose prose-lg md:prose-lg lg:prose-lg mx-auto min-w-full">
           <div className="pb-8">
             <p className="font-semibold text-lg">
-              <span className="text-red-600">{post.metadata.publishDate}</span>{" "}
+              <span className="text-red-600 pr-1">
+                {post.metadata.publishDate}
+              </span>{" "}
               {post.metadata.category}
             </p>
           </div>

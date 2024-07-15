@@ -31,7 +31,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SiteHeader />
-          <main className="flex flex-col items-center justify-between py-12 sm:py-24  px-10 sm:py-20 min-h-[calc(100vh-12rem)]">
+          <main className="flex flex-col items-center justify-between px-6 py-12   sm:px-10 sm:py-24 min-h-[calc(100vh-12rem)]">
             {children}
           </main>
           <Footer />

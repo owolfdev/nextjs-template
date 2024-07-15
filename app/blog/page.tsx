@@ -56,7 +56,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col gap-8 max-w-3xl z-10 w-full items-center justify-between">
       <div>
-        <h2 className="text-5xl sm:text-6xl font-bold">Blog</h2>
+        <h2 className="text-5xl sm:text-6xl font-black">Blog</h2>
       </div>
       <div className="text-lg">
         <p>
