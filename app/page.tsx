@@ -31,8 +31,8 @@ export default function Home() {
             Next.js 14. It offers efficient performance and fast page loading.
           </p>
           <p>
-            🌟 Shadcn UI Elements: The interface uses Shadcn UI components. It's
-            designed to be responsive and user-friendly.
+            🌟 Shadcn UI Elements: The interface uses Shadcn UI components.
+            It&apos;s designed to be responsive and user-friendly.
           </p>{" "}
           <p>
             📝 MDX Support**: Write content using Markdown and embed React
@@ -40,7 +40,7 @@ export default function Home() {
           </p>{" "}
           <p>
             🎉 **Getting Started**: Begin your development with this Next.js 14
-            starter template. It's a foundation for creating modern web
+            starter template. It&apos;s a foundation for creating modern web
             applications.
           </p>
         </div>
