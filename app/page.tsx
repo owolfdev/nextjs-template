@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 // Define the metadata generation function
 export async function generateMetadata(): Promise<Metadata> {
@@ -43,6 +44,9 @@ export default function Home() {
             starter template. It&apos;s a foundation for creating modern web
             applications.
           </p>
+          <Link href="https://github.com/owolfdev/nextjs-template">
+            Code on Github
+          </Link>
         </div>
         <div className="w-full text-lg">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
