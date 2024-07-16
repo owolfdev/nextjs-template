@@ -33,7 +33,7 @@ const Code = (props: any) => {
       <pre className="bg-gray-800 p-4 rounded-b-lg overflow-auto">
         <code
           ref={codeRef}
-          className={`${className} whitespace-pre-wrap break-words`}
+          className={`${className} bg-gray-800 whitespace-pre-wrap break-words`}
         >
           {props.children}
         </code>
