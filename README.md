@@ -6,4 +6,4 @@
 
 🎉 **Getting Started**: Begin your development with this Next.js 14 starter template. It's a foundation for creating modern web applications.
 
-code: [https://github.com/owolfdev/next-basic](https://github.com/owolfdev/next-basic)
+code: [https://github.com/owolfdev/nextjs-template](https://github.com/owolfdev/nextjs-template)
