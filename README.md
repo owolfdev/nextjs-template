@@ -1,5 +1,8 @@
 🚀 **Next.js 14 Framework**: This is a basic template starter using Next.js 14. It offers efficient performance and fast page loading.
 
+📝 **MDX Support**: Write content using Markdown and embed React
+components within it.
+
 🌟 **Shadcn UI Elements**: The interface uses Shadcn UI components. It's designed to be responsive and user-friendly.
 
 🔐 **Clerk Authentication**: The template includes Clerk for secure authentication. It ensures safe and reliable user sign-in experiences. Clerk authentication exists on the clerk branch only.
