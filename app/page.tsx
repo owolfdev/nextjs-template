@@ -1,7 +1,4 @@
-import ReactMarkdown from "react-markdown";
-import Image from "next/image";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -13,12 +10,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home() {
-  const markdown = `
-  
-  `;
-
-  const MDXContent = dynamic(() => import("@/content/page-content/home.mdx"));
-
   return (
     <div className="max-w-3xl z-10 w-full items-center justify-between">
       <div className="w-full flex justify-center items-center flex-col gap-6">
@@ -48,8 +39,11 @@ export default function Home() {
             creating modern web applications.
           </p>
           <div>
-            <Button variant="link">
-              <Link href="https://github.com/owolfdev/nextjs-template">
+            <Button variant="link" className="text-xl">
+              <Link
+                target="_blank"
+                href="https://github.com/owolfdev/nextjs-template"
+              >
                 Code on Github
               </Link>
             </Button>

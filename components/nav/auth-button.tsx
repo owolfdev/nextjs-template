@@ -31,15 +31,19 @@ export default function AuthComponent() {
       <DropdownMenu onOpenChange={(open) => setIsOpen(open)}>
         <DropdownMenuTrigger className="">
           <div className={buttonVariants({ variant: "ghost", size: "sm" })}>
-            <PersonIcon className="h-5 w-5" />
+            <PersonIcon className="h-6 w-6" />
           </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-background">
           <Link href="/">
-            <DropdownMenuItem>Home</DropdownMenuItem>
+            <DropdownMenuItem className="sm:text-sm text-lg">
+              Home
+            </DropdownMenuItem>
           </Link>
           <Link href="/profile">
-            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem className="sm:text-sm text-lg">
+              Profile
+            </DropdownMenuItem>
           </Link>
         </DropdownMenuContent>
       </DropdownMenu>

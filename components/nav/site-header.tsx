@@ -33,22 +33,22 @@ function SiteHeader() {
               <div className="space-y-8 ">
                 <div>
                   <Link href="/">
-                    <SheetClose>Home</SheetClose>
+                    <SheetClose className="text-xl">Home</SheetClose>
                   </Link>
                 </div>
                 <div>
                   <Link href="/about">
-                    <SheetClose>About</SheetClose>
+                    <SheetClose className="text-xl">About</SheetClose>
                   </Link>
                 </div>
                 <div>
                   <Link href="/blog">
-                    <SheetClose>Blog</SheetClose>
+                    <SheetClose className="text-xl">Blog</SheetClose>
                   </Link>
                 </div>
                 <div>
                   <Link href="/contact">
-                    <SheetClose>Contact</SheetClose>
+                    <SheetClose className="text-xl">Contact</SheetClose>
                   </Link>
                 </div>
               </div>
@@ -60,13 +60,22 @@ function SiteHeader() {
           <div className="text-4xl font-bold">NT</div>
         </Link>
         <nav className="pl-6 gap-6 pt-4 hidden sm:flex text-sm">
-          <a className="hover:text-muted-foreground" href="/about">
+          <a
+            className="hover:text-muted-foreground text-md hover:underline"
+            href="/about"
+          >
             About
           </a>
-          <a className="hover:text-muted-foreground" href="/blog">
+          <a
+            className="hover:text-muted-foreground text-md hover:underline"
+            href="/blog"
+          >
             Blog
           </a>
-          <a className="hover:text-muted-foreground" href="/contact">
+          <a
+            className="hover:text-muted-foreground text-md hover:underline"
+            href="/contact"
+          >
             Contact
           </a>
         </nav>
