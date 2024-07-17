@@ -81,7 +81,7 @@ export function ContactForm() {
             name="type"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message Type</FormLabel>
+                <FormLabel className="text-lg">Message Type</FormLabel>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
@@ -91,7 +91,7 @@ export function ContactForm() {
                       <SelectValue placeholder="Select message type" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className="bg-background">
                     {optionsForSelectType.map((option) => (
                       <SelectItem
                         className="input-no-zoom text-lg sm:text-base"
@@ -113,7 +113,7 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="text-lg">Email</FormLabel>
                 <FormControl>
                   <Input
                     className="input-no-zoom text-lg sm:text-base"
@@ -135,7 +135,7 @@ export function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel className="text-lg">Name</FormLabel>
                 <FormControl>
                   <Input
                     className="input-no-zoom text-lg sm:text-base"
@@ -157,7 +157,7 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel className="text-lg">Message</FormLabel>
                 <FormControl>
                   <Textarea
                     className="input-no-zoom text-lg sm:text-base"
@@ -174,15 +174,6 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-
-          {/* <div className="pt-4">
-            {recaptchaSiteKey && (
-              <ReCAPTCHA
-                sitekey={recaptchaSiteKey}
-                onChange={handleRecaptchaChange}
-              />
-            )}
-          </div> */}
 
           <Button type="submit">Submit</Button>
         </form>

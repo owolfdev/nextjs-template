@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 // Define the metadata generation function
 export async function generateMetadata(): Promise<Metadata> {
@@ -29,25 +30,30 @@ export default function Home() {
         {/* <MDXContent /> */}
         <div className="flex flex-col gap-4 text-lg">
           <p>
-            🚀 Next.js 14 Framework: This is a basic template starter using
-            Next.js 14. It offers efficient performance and fast page loading.
+            🚀 <strong>Next.js 14 Framework:</strong> This is a basic template
+            starter using Next.js 14. It offers efficient performance and fast
+            page loading.
           </p>
           <p>
-            🌟 Shadcn UI Elements: The interface uses Shadcn UI components.
-            It&apos;s designed to be responsive and user-friendly.
+            📝 <strong>MDX Support:</strong> Write content using Markdown and
+            embed React components within it.
           </p>{" "}
           <p>
-            📝 MDX Support**: Write content using Markdown and embed React
-            components within it.
+            🌟 <strong>Shadcn UI Elements:</strong> The interface uses Shadcn UI
+            components. It&apos;s designed to be responsive and user-friendly.
           </p>{" "}
           <p>
-            🎉 **Getting Started**: Begin your development with this Next.js 14
-            starter template. It&apos;s a foundation for creating modern web
-            applications.
+            🎉 <strong>Getting Started:</strong> Begin your development with
+            this Next.js 14 starter template. It&apos;s a foundation for
+            creating modern web applications.
           </p>
-          <Link href="https://github.com/owolfdev/nextjs-template">
-            Code on Github
-          </Link>
+          <div>
+            <Button variant="link">
+              <Link href="https://github.com/owolfdev/nextjs-template">
+                Code on Github
+              </Link>
+            </Button>
+          </div>
         </div>
         <div className="w-full text-lg">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
