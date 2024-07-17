@@ -3,6 +3,7 @@ import type { MDXComponents } from "mdx/types";
 import YouTube from "@/components/mdx/youtube";
 import Code from "@/components/mdx/code";
 import InlineCode from "@/components/mdx/inline-code";
+import Pre from "@/components/mdx/pre";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -24,7 +25,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       return <li className={className} {...props} />;
     },
     hr: (props) => <hr className="my-4" {...props} />,
-    pre: (props) => <pre className="overflow-x-auto pb-4" {...props} />,
+    pre: (props) => <Pre className="overflow-x-auto pb-4" {...props} />,
     code: (props) => {
       const { className, children } = props;
       if (className) {
